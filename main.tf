@@ -226,6 +226,12 @@ resource "aws_codebuild_project" "default" {
     }
   }
 
+  vpc_config {
+    security_group_ids = var.security_group_ids
+    subnets = var.subnet_ids
+    vpc_id = var.vpc_id
+  }
+
   source {
     buildspec           = var.buildspec
     type                = var.source_type

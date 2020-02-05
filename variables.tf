@@ -31,6 +31,23 @@ variable "environment_variables" {
   description = "A list of maps, that contain both the key 'name' and the key 'value' to be used as additional environment variables for the build"
 }
 
+variable "security_group_ids" {
+  type = list(string)
+  default = []
+  description = "A list of security group id's, [e.g. sg-1234567890, sg-0987654321]"
+}
+
+variable "subnet_ids" {
+  type = list(string)
+  default = []
+  description = "A list of subnet id's, e.g. [subnet-1234567890,subnet-0987654321]"
+}
+
+variable "vpc_id" {
+  type = string
+  description = "An vpc id, e.g. vpc-1234567890"
+}
+
 variable "enabled" {
   type        = bool
   default     = true
