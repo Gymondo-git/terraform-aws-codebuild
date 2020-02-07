@@ -131,8 +131,7 @@ data "aws_iam_policy_document" "permissions" {
       "ec2:DescribeNetworkInterfaces",
       "ec2:DeleteNetworkInterface",
       "ec2:DescribeDhcpOptions",
-      "ec2:CreateNetworkInterface",
-      "ec2:DeleteNetworkInterface"
+      "ec2:CreateNetworkInterface"
     ]
 
     effect = "Allow"
