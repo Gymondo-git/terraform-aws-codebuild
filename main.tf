@@ -130,14 +130,30 @@ data "aws_iam_policy_document" "permissions" {
       "ec2:DescribeVpcs",
       "ec2:DescribeNetworkInterfaces",
       "ec2:DeleteNetworkInterface",
+      "ec2:DetachNetworkInterface",
       "ec2:DescribeDhcpOptions",
-      "ec2:CreateNetworkInterfacePermission"
+      "ec2:CreateNetworkInterface",
+      "ec2:ModifySnapshotAttribute",
+      "ec2:ModifyVpcEndpointService",
+      "ec2:ResetSnapshot"
     ]
 
     effect = "Allow"
 
     resources = [
       "*",
+    ]
+  }
+
+  statement {
+    actions = [
+      "ec2:CreateNetworkInterfacePermission"
+    ]
+
+    effect = "Allow"
+
+    resources = [
+      "arn:aws:ec2:*:*:network-interface/*"
     ]
   }
 }
